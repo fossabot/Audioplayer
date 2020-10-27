@@ -5,8 +5,14 @@ using System.Windows.Forms;
 
 namespace AudioPlayer
 {
+    /// <summary>
+    /// Main form
+    /// </summary>
     public partial class Form1 : MetroFramework.Forms.MetroForm
     {
+        /// <summary>
+        /// Class constructor
+        /// </summary>
         public Form1()
         {
             InitializeComponent();
@@ -16,8 +22,17 @@ namespace AudioPlayer
             this.Text = "Audioplayer";
         }
 
+        /// <summary>
+        /// Object of the Windows Media Player class
+        /// </summary>
         private static WMPLib.WindowsMediaPlayer player = new WMPLib.WindowsMediaPlayer();
 
+        /// <summary>
+        /// Timer
+        /// Responsible for the progress bar and audiofile metadata
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void timer1_Tick(object sender, EventArgs e)
         {
             if ((player.controls.currentPosition != 0) && (player.controls.currentItem.duration != 0))
@@ -58,6 +73,13 @@ namespace AudioPlayer
             lbNameAudio.Text = Path.GetFileName(player.URL);
         }
 
+        #region Tile handlers
+
+        /// <summary>
+        /// Handler for open tile
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OpenTile_Click(object sender, EventArgs e)
         {
             try
@@ -71,12 +93,15 @@ namespace AudioPlayer
             }
         }
 
+        /// <summary>
+        /// Creating open file dialog and starting the player
+        /// </summary>
         private static void Openfile()
         {
             OpenFileDialog openSound = new OpenFileDialog()
             {
                 Filter = "MP3|*.mp3|WAV|*.wav|FLAC|*.flac|All files|*.*",
-                Multiselect = false,
+                Multiselect = true,
                 ValidateNames = true
             };
 
@@ -87,6 +112,11 @@ namespace AudioPlayer
             }
         }
 
+        /// <summary>
+        /// Handler for pause/play tile
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PlayTile_Click(object sender, EventArgs e)
         {
             if (PlayTile.Text == "Pause")
@@ -102,17 +132,56 @@ namespace AudioPlayer
             }
         }
 
+        /// <summary>
+        /// Handler for stop tile
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void StopTile_Click(object sender, EventArgs e)
         {
             player.controls.stop();
             metroProgressBar1.Value = 0;
         }
 
+        /// <summary>
+        /// Previous tile handler
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void metroTile2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// Next tile handler
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void metroTile1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        #endregion
+
+        #region Manipulations with progress bar
+
+        /// <summary>
+        /// Mouse down handler
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void metroProgressBar1_MouseDown(object sender, MouseEventArgs e)
         {
             this.metroProgressBar1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ScrollProgress);
         }
 
+        /// <summary>
+        /// Mouse up handler
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void metroProgressBar1_MouseUp(object sender, MouseEventArgs e)
         {
             this.metroProgressBar1.MouseMove -= new System.Windows.Forms.MouseEventHandler(this.ScrollProgress);
@@ -122,9 +191,16 @@ namespace AudioPlayer
             player.controls.currentPosition = ((double)e.Location.X / (double)metroProgressBar1.Width) * player.controls.currentItem.duration;
         }
 
+        /// <summary>
+        /// Keeps track of the cursor position and sets the progress bar position
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ScrollProgress(object sender, MouseEventArgs e)
         {
             metroProgressBar1.Value = ((e.Location.X * 100) / metroProgressBar1.Width);
         }
+
+        #endregion
     }
 }

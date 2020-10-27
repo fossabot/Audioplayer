@@ -40,6 +40,9 @@
             this.lbNameAudio = new MetroFramework.Controls.MetroLabel();
             this.lbTags = new MetroFramework.Controls.MetroLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.metroTile1 = new MetroFramework.Controls.MetroTile();
+            this.metroTile2 = new MetroFramework.Controls.MetroTile();
+            this.metroListView1 = new MetroFramework.Controls.MetroListView();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -56,10 +59,10 @@
             // OpenTile
             // 
             this.OpenTile.ActiveControl = null;
-            this.OpenTile.Location = new System.Drawing.Point(23, 79);
+            this.OpenTile.Location = new System.Drawing.Point(145, 393);
             this.OpenTile.Name = "OpenTile";
             this.OpenTile.PaintTileCount = false;
-            this.OpenTile.Size = new System.Drawing.Size(159, 84);
+            this.OpenTile.Size = new System.Drawing.Size(113, 53);
             this.OpenTile.Style = MetroFramework.MetroColorStyle.Red;
             this.OpenTile.TabIndex = 0;
             this.OpenTile.Text = "Open new";
@@ -72,10 +75,10 @@
             // PlayTile
             // 
             this.PlayTile.ActiveControl = null;
-            this.PlayTile.Location = new System.Drawing.Point(23, 169);
+            this.PlayTile.Location = new System.Drawing.Point(264, 393);
             this.PlayTile.Name = "PlayTile";
             this.PlayTile.PaintTileCount = false;
-            this.PlayTile.Size = new System.Drawing.Size(159, 84);
+            this.PlayTile.Size = new System.Drawing.Size(113, 53);
             this.PlayTile.Style = MetroFramework.MetroColorStyle.Red;
             this.PlayTile.TabIndex = 1;
             this.PlayTile.Text = "Pause";
@@ -88,10 +91,10 @@
             // StopTile
             // 
             this.StopTile.ActiveControl = null;
-            this.StopTile.Location = new System.Drawing.Point(23, 259);
+            this.StopTile.Location = new System.Drawing.Point(382, 393);
             this.StopTile.Name = "StopTile";
             this.StopTile.PaintTileCount = false;
-            this.StopTile.Size = new System.Drawing.Size(159, 84);
+            this.StopTile.Size = new System.Drawing.Size(113, 53);
             this.StopTile.Style = MetroFramework.MetroColorStyle.Red;
             this.StopTile.TabIndex = 2;
             this.StopTile.Text = "Stop";
@@ -103,9 +106,9 @@
             // 
             // metroProgressBar1
             // 
-            this.metroProgressBar1.Location = new System.Drawing.Point(188, 320);
+            this.metroProgressBar1.Location = new System.Drawing.Point(26, 364);
             this.metroProgressBar1.Name = "metroProgressBar1";
-            this.metroProgressBar1.Size = new System.Drawing.Size(609, 23);
+            this.metroProgressBar1.Size = new System.Drawing.Size(588, 23);
             this.metroProgressBar1.Step = 1;
             this.metroProgressBar1.Style = MetroFramework.MetroColorStyle.Red;
             this.metroProgressBar1.TabIndex = 3;
@@ -116,7 +119,7 @@
             // AudioPosition
             // 
             this.AudioPosition.AutoSize = true;
-            this.AudioPosition.Location = new System.Drawing.Point(188, 297);
+            this.AudioPosition.Location = new System.Drawing.Point(26, 341);
             this.AudioPosition.Name = "AudioPosition";
             this.AudioPosition.Size = new System.Drawing.Size(44, 20);
             this.AudioPosition.TabIndex = 4;
@@ -126,7 +129,7 @@
             // lbNameAudio
             // 
             this.lbNameAudio.AutoSize = true;
-            this.lbNameAudio.Location = new System.Drawing.Point(188, 259);
+            this.lbNameAudio.Location = new System.Drawing.Point(26, 312);
             this.lbNameAudio.Name = "lbNameAudio";
             this.lbNameAudio.Size = new System.Drawing.Size(167, 20);
             this.lbNameAudio.TabIndex = 5;
@@ -136,7 +139,7 @@
             // lbTags
             // 
             this.lbTags.AutoSize = true;
-            this.lbTags.Location = new System.Drawing.Point(188, 79);
+            this.lbTags.Location = new System.Drawing.Point(267, 63);
             this.lbTags.Name = "lbTags";
             this.lbTags.Size = new System.Drawing.Size(17, 20);
             this.lbTags.TabIndex = 6;
@@ -145,18 +148,70 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(558, 79);
+            this.pictureBox1.Location = new System.Drawing.Point(26, 63);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(235, 235);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
+            // metroTile1
+            // 
+            this.metroTile1.ActiveControl = null;
+            this.metroTile1.Location = new System.Drawing.Point(501, 393);
+            this.metroTile1.Name = "metroTile1";
+            this.metroTile1.PaintTileCount = false;
+            this.metroTile1.Size = new System.Drawing.Size(113, 53);
+            this.metroTile1.Style = MetroFramework.MetroColorStyle.Red;
+            this.metroTile1.TabIndex = 8;
+            this.metroTile1.Text = "Next";
+            this.metroTile1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile1.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroTile1.UseSelectable = true;
+            this.metroTile1.UseStyleColors = true;
+            this.metroTile1.Click += new System.EventHandler(this.metroTile1_Click);
+            // 
+            // metroTile2
+            // 
+            this.metroTile2.ActiveControl = null;
+            this.metroTile2.Location = new System.Drawing.Point(26, 393);
+            this.metroTile2.Name = "metroTile2";
+            this.metroTile2.PaintTileCount = false;
+            this.metroTile2.Size = new System.Drawing.Size(113, 53);
+            this.metroTile2.Style = MetroFramework.MetroColorStyle.Red;
+            this.metroTile2.TabIndex = 9;
+            this.metroTile2.Text = "Previous";
+            this.metroTile2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile2.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroTile2.UseSelectable = true;
+            this.metroTile2.UseStyleColors = true;
+            this.metroTile2.Click += new System.EventHandler(this.metroTile2_Click);
+            // 
+            // metroListView1
+            // 
+            this.metroListView1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.metroListView1.FullRowSelect = true;
+            this.metroListView1.Location = new System.Drawing.Point(620, 63);
+            this.metroListView1.MultiSelect = false;
+            this.metroListView1.Name = "metroListView1";
+            this.metroListView1.OwnerDraw = true;
+            this.metroListView1.Size = new System.Drawing.Size(277, 383);
+            this.metroListView1.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.metroListView1.Style = MetroFramework.MetroColorStyle.Red;
+            this.metroListView1.TabIndex = 10;
+            this.metroListView1.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroListView1.UseCompatibleStateImageBehavior = false;
+            this.metroListView1.UseSelectable = true;
+            this.metroListView1.View = System.Windows.Forms.View.List;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(820, 366);
+            this.ClientSize = new System.Drawing.Size(920, 469);
+            this.Controls.Add(this.metroListView1);
+            this.Controls.Add(this.metroTile2);
+            this.Controls.Add(this.metroTile1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbTags);
             this.Controls.Add(this.lbNameAudio);
@@ -188,6 +243,9 @@
     private MetroFramework.Controls.MetroLabel lbNameAudio;
     private MetroFramework.Controls.MetroLabel lbTags;
     private System.Windows.Forms.PictureBox pictureBox1;
+        private MetroFramework.Controls.MetroTile metroTile1;
+        private MetroFramework.Controls.MetroTile metroTile2;
+        private MetroFramework.Controls.MetroListView metroListView1;
     }
 }
 
