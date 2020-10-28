@@ -96,7 +96,7 @@ namespace AudioPlayer
         /// <summary>
         /// Creating open file dialog and starting the player
         /// </summary>
-        private static void Openfile()
+        private void Openfile()
         {
             OpenFileDialog openSound = new OpenFileDialog()
             {
@@ -107,7 +107,13 @@ namespace AudioPlayer
 
             if (openSound.ShowDialog() == DialogResult.OK)
             {
-                player.URL = openSound.FileName;
+                foreach (string item in openSound.FileNames)
+                    listBox1.Items.Add(item);
+
+                listBox1.SelectedIndex = 0;
+
+                player.URL = openSound.FileNames[listBox1.Items.Count - 1];
+
                 player.controls.play();
             }
         }
@@ -150,7 +156,13 @@ namespace AudioPlayer
         /// <param name="e"></param>
         private void metroTile2_Click(object sender, EventArgs e)
         {
+            try
+            {
+                player.URL = listBox1.Items[listBox1.SelectedIndex - 1].ToString();
+                listBox1.SelectedIndex--;
+            }
 
+            catch (Exception) { MetroFramework.MetroMessageBox.Show(this, "Previous item not found", "Oooops..."); }
         }
 
         /// <summary>
@@ -160,7 +172,23 @@ namespace AudioPlayer
         /// <param name="e"></param>
         private void metroTile1_Click(object sender, EventArgs e)
         {
+            try
+            {
+                player.URL = listBox1.Items[listBox1.SelectedIndex + 1].ToString();
+                listBox1.SelectedIndex++;
+            }
 
+            catch (Exception) { MetroFramework.MetroMessageBox.Show(this, "Next item not found", "Oooops..."); }
+        }
+
+        /// <summary>
+        /// Remove track from list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void metroTile3_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Remove(listBox1.SelectedItem);
         }
 
         #endregion
@@ -202,5 +230,15 @@ namespace AudioPlayer
         }
 
         #endregion
+
+        /// <summary>
+        /// Handler for selecting tracks
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

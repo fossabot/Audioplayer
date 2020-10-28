@@ -42,7 +42,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
             this.metroTile2 = new MetroFramework.Controls.MetroTile();
-            this.metroListView1 = new MetroFramework.Controls.MetroListView();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.metroTile3 = new MetroFramework.Controls.MetroTile();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -59,10 +60,10 @@
             // OpenTile
             // 
             this.OpenTile.ActiveControl = null;
-            this.OpenTile.Location = new System.Drawing.Point(145, 393);
+            this.OpenTile.Location = new System.Drawing.Point(170, 393);
             this.OpenTile.Name = "OpenTile";
             this.OpenTile.PaintTileCount = false;
-            this.OpenTile.Size = new System.Drawing.Size(113, 53);
+            this.OpenTile.Size = new System.Drawing.Size(138, 53);
             this.OpenTile.Style = MetroFramework.MetroColorStyle.Red;
             this.OpenTile.TabIndex = 0;
             this.OpenTile.Text = "Open new";
@@ -75,10 +76,10 @@
             // PlayTile
             // 
             this.PlayTile.ActiveControl = null;
-            this.PlayTile.Location = new System.Drawing.Point(264, 393);
+            this.PlayTile.Location = new System.Drawing.Point(314, 393);
             this.PlayTile.Name = "PlayTile";
             this.PlayTile.PaintTileCount = false;
-            this.PlayTile.Size = new System.Drawing.Size(113, 53);
+            this.PlayTile.Size = new System.Drawing.Size(138, 53);
             this.PlayTile.Style = MetroFramework.MetroColorStyle.Red;
             this.PlayTile.TabIndex = 1;
             this.PlayTile.Text = "Pause";
@@ -91,10 +92,10 @@
             // StopTile
             // 
             this.StopTile.ActiveControl = null;
-            this.StopTile.Location = new System.Drawing.Point(382, 393);
+            this.StopTile.Location = new System.Drawing.Point(458, 393);
             this.StopTile.Name = "StopTile";
             this.StopTile.PaintTileCount = false;
-            this.StopTile.Size = new System.Drawing.Size(113, 53);
+            this.StopTile.Size = new System.Drawing.Size(138, 53);
             this.StopTile.Style = MetroFramework.MetroColorStyle.Red;
             this.StopTile.TabIndex = 2;
             this.StopTile.Text = "Stop";
@@ -108,7 +109,7 @@
             // 
             this.metroProgressBar1.Location = new System.Drawing.Point(26, 364);
             this.metroProgressBar1.Name = "metroProgressBar1";
-            this.metroProgressBar1.Size = new System.Drawing.Size(588, 23);
+            this.metroProgressBar1.Size = new System.Drawing.Size(858, 23);
             this.metroProgressBar1.Step = 1;
             this.metroProgressBar1.Style = MetroFramework.MetroColorStyle.Red;
             this.metroProgressBar1.TabIndex = 3;
@@ -158,10 +159,10 @@
             // metroTile1
             // 
             this.metroTile1.ActiveControl = null;
-            this.metroTile1.Location = new System.Drawing.Point(501, 393);
+            this.metroTile1.Location = new System.Drawing.Point(602, 393);
             this.metroTile1.Name = "metroTile1";
             this.metroTile1.PaintTileCount = false;
-            this.metroTile1.Size = new System.Drawing.Size(113, 53);
+            this.metroTile1.Size = new System.Drawing.Size(138, 53);
             this.metroTile1.Style = MetroFramework.MetroColorStyle.Red;
             this.metroTile1.TabIndex = 8;
             this.metroTile1.Text = "Next";
@@ -177,7 +178,7 @@
             this.metroTile2.Location = new System.Drawing.Point(26, 393);
             this.metroTile2.Name = "metroTile2";
             this.metroTile2.PaintTileCount = false;
-            this.metroTile2.Size = new System.Drawing.Size(113, 53);
+            this.metroTile2.Size = new System.Drawing.Size(138, 53);
             this.metroTile2.Style = MetroFramework.MetroColorStyle.Red;
             this.metroTile2.TabIndex = 9;
             this.metroTile2.Text = "Previous";
@@ -187,29 +188,44 @@
             this.metroTile2.UseStyleColors = true;
             this.metroTile2.Click += new System.EventHandler(this.metroTile2_Click);
             // 
-            // metroListView1
+            // listBox1
             // 
-            this.metroListView1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.metroListView1.FullRowSelect = true;
-            this.metroListView1.Location = new System.Drawing.Point(620, 63);
-            this.metroListView1.MultiSelect = false;
-            this.metroListView1.Name = "metroListView1";
-            this.metroListView1.OwnerDraw = true;
-            this.metroListView1.Size = new System.Drawing.Size(277, 383);
-            this.metroListView1.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.metroListView1.Style = MetroFramework.MetroColorStyle.Red;
-            this.metroListView1.TabIndex = 10;
-            this.metroListView1.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroListView1.UseCompatibleStateImageBehavior = false;
-            this.metroListView1.UseSelectable = true;
-            this.metroListView1.View = System.Windows.Forms.View.List;
+            this.listBox1.BackColor = System.Drawing.SystemColors.MenuText;
+            this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listBox1.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBox1.ForeColor = System.Drawing.SystemColors.Window;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 19;
+            this.listBox1.Location = new System.Drawing.Point(620, 58);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(264, 285);
+            this.listBox1.Sorted = true;
+            this.listBox1.TabIndex = 10;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            // 
+            // metroTile3
+            // 
+            this.metroTile3.ActiveControl = null;
+            this.metroTile3.Location = new System.Drawing.Point(746, 393);
+            this.metroTile3.Name = "metroTile3";
+            this.metroTile3.PaintTileCount = false;
+            this.metroTile3.Size = new System.Drawing.Size(138, 53);
+            this.metroTile3.Style = MetroFramework.MetroColorStyle.Red;
+            this.metroTile3.TabIndex = 11;
+            this.metroTile3.Text = "Remove";
+            this.metroTile3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile3.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroTile3.UseSelectable = true;
+            this.metroTile3.UseStyleColors = true;
+            this.metroTile3.Click += new System.EventHandler(this.metroTile3_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(920, 469);
-            this.Controls.Add(this.metroListView1);
+            this.ClientSize = new System.Drawing.Size(909, 469);
+            this.Controls.Add(this.metroTile3);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.metroTile2);
             this.Controls.Add(this.metroTile1);
             this.Controls.Add(this.pictureBox1);
@@ -245,7 +261,8 @@
     private System.Windows.Forms.PictureBox pictureBox1;
         private MetroFramework.Controls.MetroTile metroTile1;
         private MetroFramework.Controls.MetroTile metroTile2;
-        private MetroFramework.Controls.MetroListView metroListView1;
+        private System.Windows.Forms.ListBox listBox1;
+        private MetroFramework.Controls.MetroTile metroTile3;
     }
 }
 
