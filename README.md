@@ -1,5 +1,6 @@
 # Audio player
 ![Screenshot](.github/Screen_v1.0.0.png)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Flight-hat%2FAudioplayer.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Flight-hat%2FAudioplayer?ref=badge_shield)
 ---
 The audio player for Winsows OS. Created in .NET C#.
 
@@ -11,3 +12,7 @@ The program has a simple user interface. On the left side of the program, there 
 
 ## Install
 You can download the program from this link. You can install the program on the "next-next-next" principle. After installation, a program shortcut will be created on the desktop. Installer language is Russian. In the next version, the language selection will be added. The program is deleted in the same way as any application in Windows OS.
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Flight-hat%2FAudioplayer.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Flight-hat%2FAudioplayer?ref=badge_large)
